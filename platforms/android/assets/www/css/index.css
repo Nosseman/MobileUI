@@ -1,0 +1,22 @@
+.app {
+    font-family: Magneto, Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.app2 {
+    font-family: Magneto, Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: large;
+}
+
+.bau {
+    font-family: Matura MT Script Capitals, Arial, Helvetica, sans-serif;
+}
+.rox {
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    width: 45%;
+    float: left;
+    margin-right: 3px;
+    margin-bottom: 3px;
+}
