@@ -1,22 +1,28 @@
-var users = [
-    {
-        username = "juuso",
-        password = "app"
-    },
-    {
-        username = "teacher",
-        password = "laurea"
-    }]
+$(document).on("ready", function () {
+    databaseHandler.createDatabase();
+});
 
-function login() {
-    var username = document.getElementbyId("username").value
-    var password = document.getElementById("password").value
+function addUser() {
+    var username = $("#txtUsername").val();
+    var password = $("#txtPassword").val();
 
-    for (i = 0; users.lenght; i++) {
-        if (username == users[i].username && password == users[i].password) {
-            openPage('page');
-        } else {
-            alert("Incorrect username or password.")
+    if (!username) {
+        alert("Username is required");
+    } else {
+        var r = confirm("Username: " + username);
+        if (r == true) {
+            userHandler.addUser(username, password);
+            $("#txtUsername").val("");
+            $("#txtPassword").val("");
         }
+        closeMenu('registerMenu');
     }
 }
+
+function login() {
+    var username = $("#loginUsername").val();
+    var password = $("#loginPassword").val();
+    var userid = "" + username + password
+    userHandler.getUser(userid);
+}
+

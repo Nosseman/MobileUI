@@ -1,50 +1,95 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
+<head>
+
+    <!-- Include meta tag to ensure proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Include jQuery Mobile stylesheets -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!-- Include the jQuery library -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- Include the jQuery Mobile library -->
+    <!--<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+
+    <script type="text/javascript" src="js/databaseHandler.js"></script>
+    <script type="text/javascript" src="js/userHandler.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="mobileui/mobileui.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
     <link rel="stylesheet" type="text/css" href="mobileui/style.css">
-        <meta name="format-detection" content="telephone=no">
-        <meta charset="utf-8">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Login</title>
-    </head>
-    <body class="padding blue-100 has-header has-sub-header">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Login</title>
+</head>
 
-        <div class="header blue-900">
-            <h1 class="app align-center">Juuso's MobileApp</h1>
-        </div>
+<body class="padding blue-100 has-header has-sub-header">
 
-        <div class="space"></div>
-        <div class="align-center">
-            <i class="ion-fireball icon-huge"></i>
-        </div>
-        <div class="space"></div>
-        <h1 class="bau text-blue-900 align-center">Welcome to</h1>
-        <h1 class="app2 align-center text-blue-900">Juuso's MobileApp</h1>
-        <h1 class="bau text-blue-900 align-center">Please login</h1>
-        <div class="space"></div>
-        <div class="space"></div>
-
-        <div class="row">
-            <div class="col-90 col-center">
-                <div class="list no-border">
-                    <div class="item icon blue-300 ion-android-person border-blue-500 border-bottom">
-                        <input class="placeholder-white text-blue-900" type="text" placeholder="Username" id="username">
-                    </div>
-                    <div class="item icon blue-300 ion-lock-combination">
-                        <input class="placeholder-white text-blue-900" type="password" placeholder="Password" id="password">
-                    </div>
-                </div>
+    <!--This is the "menu" I'll use to add the user-->
+    <div class="menu cover blend-soft-light align-center blue-100" id="registerMenu">
+        <div class="cover align-center">
+            <div class="item blue-900">
                 <div class="space"></div>
+                <h1 class="app align-center center">Register</h1>
                 <div class="space"></div>
-                <button class="blue-700 border-white text-white radius full" onclick="window.location.href = 'page.html'">LOGIN</button>
             </div>
+            <div class="space"></div>
+            <div class="space"></div>
+            <div class="space"></div>
+            <h1 class="bau text-blue-900 align-center">Want to access</h1>
+            <h1 class="app2 align-center text-blue-900">Juuso's MobileApp?</h1>
+            <h1 class="bau text-blue-900 align-center">Please create an account</h1>
+            <div class="space"></div>
+            <div class="space"></div>
+            <div class="space"></div>
+            <div class="list">
+                <div class="item icon blue-300 ion-android-person border-blue-500 border-bottom">
+                    <input class="placeholder-white text-blue-900" type="text" placeholder="Username" id="txtUsername">
+                </div>
+                <div class="item icon blue-300 ion-lock-combination">
+                    <input class="placeholder-white text-blue-900" type="password" placeholder="Password" id="txtPassword">
+                </div>
+            </div>
+            <div class="space"></div>
+            <div class="space"></div>
+            <button class="blue-700 border-white text-white radius full" onlick="addUser()">Register</button>
         </div>
+    </div>
 
+    <!--Header of the app-->
+    <div class="header blue-900">
+        <h1 class="app align-center">Juuso's MobileApp</h1>
+    </div>
 
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="mobileui/mobileui.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+    <div class="space"></div>
+    <div class="align-center">
+        <i class="ion-fireball icon-huge"></i>
+    </div>
+    <div class="space"></div>
+    <h1 class="bau text-blue-900 align-center">Welcome to</h1>
+    <h1 class="app2 align-center text-blue-900">Juuso's MobileApp</h1>
+    <h1 class="bau text-blue-900 align-center">Please login</h1>
+    <div class="space"></div>
+    <div class="space"></div>
+
+    <div class="row">
+        <div class="col-90 col-center">
+            <div class="list no-border">
+                <div class="item icon blue-300 ion-android-person border-blue-500 border-bottom">
+                    <input class="placeholder-white text-blue-900" type="text" placeholder="Username" id="loginUsername">
+                </div>
+                <div class="item icon blue-300 ion-lock-combination">
+                    <input class="placeholder-white text-blue-900" type="password" placeholder="Password" id="loginPassword">
+                </div>
+            </div>
+            <div class="space"></div>
+            <div class="space"></div>
+            <button class="blue-700 border-white text-white radius full" onclick="login()">LOGIN</button>
+            <p class="text-black align-center">
+                Not a member yet?
+                <a class="text-blue-900" onclick="openMenu('registerMenu')">Register!</a>
+            </p>
+
+        </div>
+    </div>
+
+</body>
 </html>
