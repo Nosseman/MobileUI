@@ -1,8 +1,11 @@
+// Juuso Nousiainen, 1751514
+
 var app = {
     initialize: function () {
-
+        // Here is where you put your API key
         var url = "https://api.nasa.gov/planetary/apod?api_key=KEY";
 
+        // function for the button to get a random image from Nasa
         $("#randomImage").click(function () {
             $.ajax({
                 url: url + "&date=" + randomDate(new Date(2015, 0, 1), new Date()),

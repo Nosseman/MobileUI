@@ -1,4 +1,6 @@
-﻿/*
+﻿// Juuso Nousiainen, 1751514
+
+/*
 Responsive Img jQuery Plugin
 Version 1.5
 Nov 23rd, 2013
