@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="mobileui/style.css">
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="utf-8">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Juuso's MobileApp</title>
+</head>
+
+<body class="padding blue-100 has-header has-sub-header">
+    <div class="menu cover blend-soft-light align-center blue-800" id="menu">
+        <div class="cover align-center">
+            <div class="space"></div>
+            <img class="avatar circle border-white shadow" src="img/profile.jpg" width="190" height="167">
+            <div class="space"></div>
+            <h1 class="center text-white">Juuso Nousiainen</h1>
+            <p class="text-white">blaablaalbaa@blaablaa.bl</p>
+        </div>
+        <div class="list no-border">
+            <a class="item space-big">
+                <div class="left">
+                    <i class="icon ion-android-home white"></i>
+                </div>
+                <h1 class="left text-white" onclick="window.location.href = 'page.html'">Home</h1>
+            </a>
+            <a class="item space-big">
+                <div class="left">
+                    <i class="icon ion-log-out white"></i>
+                </div>
+                <h1 class="left text-white" onclick="window.location.href = 'index.html'">Logout</h1>
+            </a>
+        </div>
+    </div>
+
+    <div class="header blue-900">
+        <button class="left icon ion-navicon" onclick="openMenu('menu')"></button>
+        <h1 class="app align-center">Juuso's MobileApp</h1>
+    </div>
+
+    <div class="swiper-container swiper-container-fullscreen">
+        <div class="swiper-wrapper">
+            <!-- Add slide 1 -->
+            <div class="swiper-slide vertical-align-center pink-400">
+                <i class="icon ion-beer"></i>
+                <h1>Hello Beer</h1>
+                <p>The easiest way to order beer from your favorite bar!</p>
+            </div>
+            <!-- Add slide 2 -->
+            <div class="swiper-slide vertical-align-center green-600">
+                <i class="icon ion-videocamera"></i>
+                <h1>Movie Tickets</h1>
+                <p>Book movie tickets for your family and friends!</p>
+            </div>
+            <!-- Add slide 3 -->
+            <div class="swiper-slide vertical-align-center blue">
+                <i class="icon ion-pricetag"></i>
+                <h1>Great Discounts</h1>
+                <p>Best discounts on every single service we offer!</p>
+                <button class="border-white text-white radius margin-top">
+                    Login in app now
+                </button>
+            </div>
+
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination-white"></div>
+    </div>
+
+    <script type="text/javascript">
+        new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true
+        });
+    </script>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="mobileui/mobileui.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

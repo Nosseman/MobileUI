@@ -7,7 +7,8 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <title>Landing Page</title>
+    <script type="text/javascript" src="js/responsiveImg.js"></script>
+    <title>Juuso's MobileApp</title>
 </head>
 
 <body class="padding blue-100 has-header has-sub-header">
@@ -42,25 +43,15 @@
 
     <div class="header blue-600 sub shadow tab">
         <button class="icon ion-android-person active" onclick="openTab('tabWelcome')">Welcome</button>
-        <button class="icon ion-android-home" onclick="openTab('tabHome')">Home</button>
+        <button class="icon ion-planet" onclick="openTab('tabSpace')">Space</button>
         <button class="icon ion-information-circled" onclick="openTab('tabAbout')">About</button>
     </div>
 
+    <!--Tab1 content-->
     <div class="tab-content active" id="tabWelcome">
         <h2 class="text-strong padding text-blue-900">Welcome</h2>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-            in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-    </div>
-
-    <div class="tab-content" id="tabHome">
-        <h2 class="text-strong padding text-blue-900">Home</h2>
-        <p>
-            <img class="rox padding blue-900" src="img/face.jpg"/>
+            <img class="rox padding blue-900" src="img/face.jpg" />
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
             et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
@@ -69,6 +60,25 @@
         </p>
     </div>
 
+    <!--Tab2 content-->
+    <div class="tab-content" id="tabSpace">
+        <h2 class="text-strong padding text-blue-900">Space</h2>
+        <div data-role="page" id="page">
+            <button class="blue-700 border-white text-white radius full" id="randomImage">Random image</button>
+
+            <div data-role="content" id="imgcontent" style="width:100%;">
+                <img class="align-center" id="spaceimage" style="max-width:100%;" />
+            </div>
+            <!--This part here needs fixing. The information doesn't show up for some reason-->
+            <div data-role="content" id="textcontent">
+                <p name="copyright" id="copyright"></p>
+                <p name="desc" id="desc"></p>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Tab3 content-->
     <div class="tab-content" id="tabAbout">
         <h2 class="text-strong padding text-blue-900">About</h2>
 
